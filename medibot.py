@@ -9,7 +9,7 @@ from langchain_community.vectorstores import FAISS
 import streamlit as st
 
 # Load Hugging Face token from environment
-HF_TOKEN = os.environ.get("HF_TOKEN")
+HF_TOKEN = st.secrets.get("HF_TOKEN") or os.environ.get("HF_TOKEN")
 HUGGINGFACE_REPO_ID = "mistralai/Mistral-7B-Instruct-v0.3"
 
 # Load LLM
